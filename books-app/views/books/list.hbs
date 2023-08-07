@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Listado de libros</h1>
+    <hr>
+
+    <ol class="list-group">
+
+        {{#each books}}
+
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">{{title}}</div>
+
+                <a href="/libros/detalles/{{_id}}">Ver detalles</a>
+
+                <a href="/libros/editar/{{_id}}">Editar</a>
+
+                <form action="/libros/eliminar/{{_id}}" method="POST">
+                    <input type="submit" value="Eliminar">
+                </form>
+
+            </div>
+            <span class="badge bg-primary rounded-pill">{{rating}}</span>
+        </li>
+        {{/each}}
+    </ol>
+
+    <hr>
+    <a href="/" class="btn btn-dark mb-5">Volver a inicio</a>
+</div>
